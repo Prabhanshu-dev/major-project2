@@ -45,7 +45,7 @@
                     <a class="nav-link" href="<%=  user1.getUserType().equals("admin") ? "admin.jsp" : "index.jsp"%>"><%= user1.getUserName()%> </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="LogoutServlet">Logout </a>
+                    <a class="nav-link" href="LogoutServlet" onclick="return localstorageclear()">Logout </a>
                 </li>
 
                 <%    }

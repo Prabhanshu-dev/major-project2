@@ -151,3 +151,10 @@ function goToCheckout() {
     window.location = "checkout.jsp"
 
 }
+
+function localstorageclear()
+{
+    alert("localstorage");
+    localStorage.clear();
+    return true;
+}

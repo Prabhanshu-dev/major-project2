@@ -69,6 +69,7 @@ public class RegisterServlet extends HttpServlet {
 			CardidstoreDao cardidDao = new CardidstoreDao(FactoryProvider.getFactory());
 			Cardidstore cardid = cardidDao.getCardIDByusercardid(usercardid);
              System.out.println(user);
+             System.out.println(cardid);
 			
 			if (cardid!=null) {
 				
