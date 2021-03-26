@@ -41,20 +41,7 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 	<!-- <h1 style="color: #eb0e19">Welcome to the Faujikart</h1> -->
-	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-	
+  
 	<div class="container-fluid" style="background-image:url('img/background.jpg');background-repeat:no-repeat;background-size:cover;">
 		<div class="row mt-3">
 			<%
