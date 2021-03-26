@@ -48,7 +48,7 @@
 							</div>
 							<div class="form-group">
 								<label for="name">CardID</label> <input name="card_id"
-									type="number" class="form-control" 
+									type="\text" class="form-control" 
 									pattern="[0-9][0-9]{5}" aria-describedby="emailHelp"
 									placeholder="Enter here" required=required>
 							</div>

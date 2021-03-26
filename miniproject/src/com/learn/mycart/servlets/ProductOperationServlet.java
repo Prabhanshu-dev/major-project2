@@ -73,7 +73,7 @@ public class ProductOperationServlet extends HttpServlet {
 
 				// out.println("category saved");
 				HttpSession session = request.getSession();
-				session.setAttribute("message", "Category added successfully-" + catId);
+				session.setAttribute("message", "Category added successfully-");
 				response.sendRedirect("admin.jsp");
 				return;
 			} else if (op.trim().equals("addproduct")) {
