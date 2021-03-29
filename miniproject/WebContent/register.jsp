@@ -45,12 +45,14 @@
 									pattern="[A-Za-z]{3,30}" placeholder=" Enterhere"
 									aria-describedby="emailHelp" placeholder="Enter email"
 									required=required>
+							<%@include file="components/message_userName.jsp"%>		
 							</div>
 							<div class="form-group">
 								<label for="name">CardID</label> <input name="card_id"
-									type="\text" class="form-control" 
+									type="text" class="form-control" 
 									pattern="[0-9][0-9]{5}" aria-describedby="emailHelp"
-									placeholder="Enter here" required=required>
+									placeholder="Enter here">
+							<%@include file="components/message_usercardid.jsp"%>		
 							</div>
 							<div class="form-group">
 								<label for="email">User Email</label> <input name="user_email"
@@ -58,6 +60,7 @@
 									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 									placeholder="Enter here" aria-describedby="emailHelp"
 									placeholder="Enter email" required>
+							<%@include file="components/message_useremail.jsp"%>		
 							</div>
 							<div class="form-group">
 								<label for="password">User Password</label> <input
@@ -65,19 +68,21 @@
 									id="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$" 
 									placeholder="Enter here" aria-describedby="emailHelp"
 									placeholder="Enter email" required>
+							<%@include file="components/message_userPassword.jsp"%>		
 							</div>
 							<div class="form-group">
 								<label for="phone">Contact Number</label> <input
 									name="user_phone" type="text" class="form-control" id="phone"
 									pattern="[789][0-9]{9}" placeholder="Enter here"
-									aria-describedby="emailHelp" placeholder="Enter email"
-									required=required>
+									aria-describedby="emailHelp" placeholder="Enter email">
+								<%@include file="components/message_userPhone.jsp"%>	
 							</div>
 							<div class="form-group">
 								<label for="Address">User Address</label>
 								<textarea name="user_address" style="height: 200px"
 									class="form-control" placeholder="Enter your Address"
 									required=required></textarea>
+								<%@include file="components/message_userAddress.jsp"%>	
 							</div>
 							<div class="container text-center">
 								<button class="btn btn-outline-success">Register</button>

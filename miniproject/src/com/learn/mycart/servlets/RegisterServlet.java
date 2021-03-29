@@ -72,8 +72,8 @@ public class RegisterServlet extends HttpServlet {
 			} 
 			
 			if(httpSession.getAttribute("message8")!=null ||httpSession.getAttribute("message9")!=null ||httpSession.getAttribute("message10")!=null ||httpSession.getAttribute("message11")!=null||httpSession.getAttribute("message12")!=null || httpSession.getAttribute("message13")!=null) {
-				response.sendRedirect("admin.jsp");
-			}
+				response.sendRedirect("register.jsp");
+			}else {
 
 			// validation
 
@@ -131,10 +131,9 @@ public class RegisterServlet extends HttpServlet {
 				return;
 			}
 
-		} catch (Exception e) {
+		}} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
