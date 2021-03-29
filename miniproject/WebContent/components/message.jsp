@@ -18,7 +18,8 @@ if (message != null) {
 
 <%
 	
-	}else if(message=="You are not logged in !! Login first to access checkout page"||message == "Registration Failed !!"|| message == "Invalid Details"){ %>
+	}else if(message=="You are not logged in !! Login first to access checkout page"||message == "Registration Failed !!"|| message == "Invalid Details" 
+	    || message == "Please enter the Price!!" || message =="Please enter the Discount!!" || message == "Please enter the Quantiy!!"){ %>
 			
 			<div class="alert alert-danger alert-dismissible fade show"
 	role="alert">

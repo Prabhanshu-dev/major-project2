@@ -38,7 +38,7 @@
 					<%@include file="components/message.jsp"%>
 					<div class="card-body px-5">
 						<h3 class="text-center my-3">Sign up here!!</h3>
-						<form action="RegisterServlet" method="Get">
+						<form action="RegisterServlet" method="get">
 							<div class="form-group">
 								<label for="name">User Name</label> <input name="user_name"
 									type="text" class="form-control" id="name"

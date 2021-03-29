@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="css/style.css">
 <!-- linking css style with index jsp page -->
 </head>
-<body>
+<body style="background-image:url(img/loginpage.jpeg);background-repeat:no-repeat;background-size:cover;">
 	<%@include file="components/navbar.jsp"%>
 		<div class="row">
 			<div class="col-md-6 offset-md-3">

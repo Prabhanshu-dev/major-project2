@@ -38,11 +38,11 @@
 <!-- linking css style with index jsp page -->
 
 </head>
-<body>
+<body style="background-image:url(img/index.jpeg);background-repeat:no-repeat;background-size:cover;">
 	<%@include file="components/navbar.jsp"%>
 	<!-- <h1 style="color: #eb0e19">Welcome to the Faujikart</h1> -->
   
-	<div class="container-fluid" style="background-image:url('img/background.jpg');background-repeat:no-repeat;background-size:cover;">
+	<div class="container-fluid">
 		<div class="row mt-3">
 			<%
 				String cat = request.getParameter("category");
@@ -79,7 +79,11 @@
 				</div>
 
 			</div>
+             <div>
 
+			
+
+		</div>
 			<div class="col-md-10">
 
 				<div clas="row mt-4">

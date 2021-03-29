@@ -6,18 +6,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int pId;
+	 @NotEmpty(message = "Please enter name")
 	private String pName;
+	 @NotEmpty(message = "Please enter Description")
 	@Column(length= 3000)
 	private String pDesc;
 	private String pPhoto;
+	 @NotEmpty(message = "Please enter price")
 	private int pPrice;
+	 @NotEmpty(message = "Please enter Discount") 
 	private int pDiscount;
+	 @NotEmpty(message = "Please enter Quantity")
 	private int pQuantity;
 	@ManyToOne
 	private Category category;

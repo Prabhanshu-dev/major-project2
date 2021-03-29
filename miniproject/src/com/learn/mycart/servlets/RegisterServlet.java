@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,11 +29,11 @@ public class RegisterServlet extends HttpServlet {
 	public RegisterServlet() {
 		super();
 	}
-
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-
+		HttpSession httpSession = request.getSession();
 		try {
 			String userName = request.getParameter("user_name");
 			String usercardid = request.getParameter("card_id");
@@ -41,6 +42,38 @@ public class RegisterServlet extends HttpServlet {
 			String userPhone = request.getParameter("user_phone");
 			String userAddress = request.getParameter("user_address");
 			String userType = request.getParameter("user_type");
+			
+			
+			if(userName.equals(""))
+			{
+				
+				httpSession.setAttribute("message8", "Please enter the userName !!");
+			//	response.sendRedirect("admin.jsp");
+			} if(usercardid.equals("")){
+				
+				httpSession.setAttribute("message9", "Please enter the usercardid!!");
+			//	response.sendRedirect("admin.jsp");
+			} if(userEmail.equals("")){
+				
+				httpSession.setAttribute("message10", "Please enter the userEmail!!");
+			//	response.sendRedirect("admin.jsp");
+			} if(userPassword.equals("")){
+				
+				httpSession.setAttribute("message11", "Please enter the userPassword!!");
+			//	response.sendRedirect("admin.jsp");
+			} if(userPhone.equals("")){
+				
+				httpSession.setAttribute("message12", "Please enter the userPhone!!");
+			//	response.sendRedirect("admin.jsp");
+			} if(userAddress.equals("")){
+				
+				httpSession.setAttribute("message13", "Please enter the userAddress!!");
+			//	response.sendRedirect("admin.jsp");
+			} 
+			
+			if(httpSession.getAttribute("message8")!=null ||httpSession.getAttribute("message9")!=null ||httpSession.getAttribute("message10")!=null ||httpSession.getAttribute("message11")!=null||httpSession.getAttribute("message12")!=null || httpSession.getAttribute("message13")!=null) {
+				response.sendRedirect("admin.jsp");
+			}
 
 			// validation
 
@@ -82,7 +115,7 @@ public class RegisterServlet extends HttpServlet {
 				session.close();// closing hibernate session
 				System.out.println("Successfully saved");
 
-				HttpSession httpSession = request.getSession();// again taking out http session from request object
+				// again taking out http session from request object
 				httpSession.setAttribute("message", "Registration Successful !!");
 				response.sendRedirect("register.jsp");
 				return; // end and return of control to  browser
@@ -92,7 +125,7 @@ public class RegisterServlet extends HttpServlet {
 			//	Session session = sessionFactory.openSession();
 			//	Transaction tx = session.beginTransaction();
 
-				HttpSession httpSession = request.getSession();
+				
 				httpSession.setAttribute("message", "Registration Failed !!");
 				response.sendRedirect("register.jsp");
 				return;

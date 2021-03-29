@@ -167,12 +167,14 @@ if (user == null) {
 						<input type="hidden" name="operation" value="addcategory">
 						<div class=form-group>
 							<input type="text" class="form-control" name="catTitle"
-								placeholder="Enter category title" required />
+								placeholder="Enter category title"  />
+							 <%@include file="components/message_title.jsp"%>	
 						</div>
 						<div class="form-group">
 							<textarea style="height: 350px" class="form-control"
 								placeholder="Enter category description" name="catDescription"
-								required></textarea>
+								></textarea>
+						    <%@include file="components/message_category.jsp"%>			
 						</div>
 						<div class="container text-center">
 							<button class="btn btn-outline-success">Add Category</button>
@@ -207,22 +209,28 @@ if (user == null) {
 						<div class=form-group>
 							<input type="text" class="form-control" name="pName"
 								placeholder="Enter product title">
+						   <%@include file="components/message_pName.jsp"%>		
 						</div>
 						<div class=form-group>
 							<textarea type="text" class="form-control" name="pDesc"
 								placeholder="Enter product Description"></textarea>
+								<%@include file="components/message_pDesc.jsp"%>	
 						</div>
+						 	
 						<div class="form-group">
 							<input type="number" class="form-control"
 								placeholder="Enter product Discount" name="pDiscount" required>
+									<%@include file="components/message_pDiscount.jsp"%>
 						</div>
 						<div class="form-group">
 							<input type="number" class="form-control"
 								placeholder="Enter price of the product" name="pPrice">
+								<%@include file="components/message_pPrice.jsp"%>
 						</div>
 						<div class="form-group">
 							<input type="number" class="form-control"
 								placeholder="Enter product Quantity" name="pQuantity">
+								<%@include file="components/message_Quantity.jsp"%>
 						</div>
 						
 						<div class="form-group">
