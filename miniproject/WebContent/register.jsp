@@ -29,7 +29,7 @@
 
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background-image:url(img/signup.jpg);background-repeat:no-repeat;background-size:cover;">
 	<%@include file="components/navbar.jsp"%>
 	<div class="container-fluid">
 		<div class="row mt-5">

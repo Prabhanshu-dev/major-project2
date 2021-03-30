@@ -41,7 +41,7 @@
 <!-- linking css style with index jsp page -->
 
     </head>
-    <body>
+    <body style="background-image:url(img/checkout4.jpeg);background-repeat:no-repeat;background-size:cover;">
          <%@include  file="components/navbar.jsp" %>
 
         <div class="container">
@@ -92,7 +92,7 @@
                                 </div>
 
                                 <div class="container text-center">
-                                    <button class="btn btn-outline-success"><a href="Payment.jsp" >Order Now</button>
+                                    <button class="btn btn-outline-success"><a href="order.jsp" >Order Now</button>
                                     <button class="btn btn-outline-primary"><a href="index.jsp">Continue Shopping</button>
                                 </div>
 
