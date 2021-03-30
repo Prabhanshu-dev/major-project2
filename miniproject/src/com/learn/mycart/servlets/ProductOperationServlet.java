@@ -67,11 +67,12 @@ public class ProductOperationServlet extends HttpServlet {
 				String description = request.getParameter("catDescription");
 				if(!request.getParameter("catTitle").equals(""))
 				{
-					if(!Pattern.matches("^[a-zA-Z]+$",request.getParameter("catTitle")))
+					if(!Pattern.matches("^[a-zA-Z0-9_ ]*$",request.getParameter("catTitle")))
 					{
 						session.setAttribute("message6","Please enter the Alphabet Only!!");
 					}
-				}if(title.equals(""))
+				}
+				if(title.equals(""))
 				{
 					
 					session.setAttribute("message6", "Please enter the title !!");
