@@ -14,7 +14,7 @@ if (message8!=null) {
 
 <%	
 
- session.removeAttribute("message6");
+ session.removeAttribute("message8");
 
 } 
 %>    

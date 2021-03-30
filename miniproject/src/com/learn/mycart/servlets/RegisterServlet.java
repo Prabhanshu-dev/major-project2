@@ -1,6 +1,7 @@
 package com.learn.mycart.servlets;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 //import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
@@ -43,13 +44,29 @@ public class RegisterServlet extends HttpServlet {
 			String userAddress = request.getParameter("user_address");
 			String userType = request.getParameter("user_type");
 			
+			if(!request.getParameter("user_name").equals(""))
+			{
+				if(!Pattern.matches("^[a-zA-Z]+$",request.getParameter("user_name")))
+				{
+					httpSession.setAttribute("message8","Please enter the Alphabet Only!!");
+				}
+			}
 			
 			if(userName.equals(""))
 			{
 				
 				httpSession.setAttribute("message8", "Please enter the userName !!");
 			//	response.sendRedirect("admin.jsp");
-			} if(usercardid.equals("")){
+			}
+			if(!request.getParameter("card_id").equals(""))
+			{
+				if(!Pattern.matches("[0-9][0-9]{5}",request.getParameter("card_id")))
+				{
+					httpSession.setAttribute("message9","Please enter the Numbers in valid format Only!!");
+				}
+			}
+			
+			if(usercardid.equals("")){
 				
 				httpSession.setAttribute("message9", "Please enter the usercardid!!");
 			//	response.sendRedirect("admin.jsp");
@@ -61,7 +78,15 @@ public class RegisterServlet extends HttpServlet {
 				
 				httpSession.setAttribute("message11", "Please enter the userPassword!!");
 			//	response.sendRedirect("admin.jsp");
-			} if(userPhone.equals("")){
+			}
+			if(!request.getParameter("user_phone").equals(""))
+			{
+				if(!Pattern.matches("[789][0-9]{9}",request.getParameter("user_phone")))
+				{
+					httpSession.setAttribute("message12","Please enter the Numbers in valid format Only!!");
+				}
+			}	
+	         if(userPhone.equals("")){
 				
 				httpSession.setAttribute("message12", "Please enter the userPhone!!");
 			//	response.sendRedirect("admin.jsp");

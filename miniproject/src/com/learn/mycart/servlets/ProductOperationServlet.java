@@ -65,7 +65,13 @@ public class ProductOperationServlet extends HttpServlet {
 				// fetch category data
 				String title = request.getParameter("catTitle");
 				String description = request.getParameter("catDescription");
-				if(title.equals(""))
+				if(!request.getParameter("catTitle").equals(""))
+				{
+					if(!Pattern.matches("^[a-zA-Z]+$",request.getParameter("catTitle")))
+					{
+						session.setAttribute("message6","Please enter the Alphabet Only!!");
+					}
+				}if(title.equals(""))
 				{
 					
 					session.setAttribute("message6", "Please enter the title !!");
@@ -100,12 +106,25 @@ public class ProductOperationServlet extends HttpServlet {
 				 int pDiscount=0;
 				 int pQuantity=0;
 				 int catId=0;
+				 
+				if(!request.getParameter("pName").equals(""))
+				{
+					if(!Pattern.matches("^[a-zA-Z]+$",request.getParameter("pName")))
+					{
+						session.setAttribute("message1","Please enter the Alphabet Only!!");
+					}
+				}if(pName.equals(""))
+				{
+					
+					session.setAttribute("message1", "Please enter the Name !!");
+				//	response.sendRedirect("admin.jsp");
+				}
 				if(!request.getParameter("pPrice").equals(""))
 				{
 
 					if(!Pattern.matches("[0-9]", request.getParameter("pQuantity")))
 					{
-						session.setAttribute("message3", "Please enter the Price!!");
+						session.setAttribute("message3", "Please enter the Number only!!");
 					}else {
 						 pPrice = Integer.parseInt(request.getParameter("pPrice"));		
 					}
@@ -167,12 +186,7 @@ public class ProductOperationServlet extends HttpServlet {
 				}
 				 
 				
-				if(pName.equals(""))
-				{
-					
-					session.setAttribute("message1", "Please enter the Name !!");
-				//	response.sendRedirect("admin.jsp");
-				} if(pDesc.equals("")){
+				 if(pDesc.equals("")){
 					
 					session.setAttribute("message2", "Please enter the Description!!");
 				//	response.sendRedirect("admin.jsp");

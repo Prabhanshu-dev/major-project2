@@ -42,14 +42,14 @@
 							<div class="form-group">
 								<label for="name">User Name</label> <input name="user_name"
 									type="text" class="form-control" id="name"
-									pattern="[A-Za-z]{3,30}" placeholder=" Enterhere"
+									 placeholder=" Enterhere"
 									aria-describedby="emailHelp" placeholder="Enter email">
 							<%@include file="components/message_userName.jsp"%>		
 							</div>
 							<div class="form-group">
 								<label for="name">CardID</label> <input name="card_id"
 									type="text" class="form-control" 
-									pattern="[0-9][0-9]{5}" aria-describedby="emailHelp"
+									 aria-describedby="emailHelp"
 									placeholder="Enter here">
 							<%@include file="components/message_usercardid.jsp"%>		
 							</div>
@@ -72,7 +72,7 @@
 							<div class="form-group">
 								<label for="phone">Contact Number</label> <input
 									name="user_phone" type="text" class="form-control" id="phone"
-									pattern="[789][0-9]{9}" placeholder="Enter here"
+									placeholder="Enter here"
 									aria-describedby="emailHelp" placeholder="Enter email">
 								<%@include file="components/message_userPhone.jsp"%>	
 							</div>
