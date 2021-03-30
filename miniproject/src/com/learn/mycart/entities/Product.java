@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Product {
@@ -19,11 +20,11 @@ public class Product {
 	@Column(length= 3000)
 	private String pDesc;
 	private String pPhoto;
-	 @NotEmpty(message = "Please enter price")
+	 @NotNull(message = "Please enter price")
 	private int pPrice;
-	 @NotEmpty(message = "Please enter Discount") 
+	 @NotNull(message = "Please enter Discount") 
 	private int pDiscount;
-	 @NotEmpty(message = "Please enter Quantity")
+	 @NotNull(message = "Please enter Quantity")
 	private int pQuantity;
 	@ManyToOne
 	private Category category;

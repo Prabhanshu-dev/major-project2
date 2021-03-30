@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -99,20 +100,48 @@ public class ProductOperationServlet extends HttpServlet {
 				 int pDiscount=0;
 				 int pQuantity=0;
 				 int catId=0;
-				if(!request.getParameter("pPrice").equals("")) {
+				if(!request.getParameter("pPrice").equals(""))
+				{
+
+					if(!Pattern.matches("[0-9]", request.getParameter("pQuantity")))
+					{
+						session.setAttribute("message3", "Please enter the Price!!");
+					}else {
+						 pPrice = Integer.parseInt(request.getParameter("pPrice"));		
+					}
+						
+				}else if(pPrice==0){
 					
-						 pPrice = Integer.parseInt(request.getParameter("pPrice"));
-				
-					
+					session.setAttribute("message3", "Please enter the Price!!");
+				//	response.sendRedirect("admin.jsp");
+				} else
+				{
+					session.setAttribute("message3", "Please enter the Price!!");
 				}
-					
 				
+				
+				
+					
 				if(!request.getParameter("pDiscount").equals(""))
 				{
+					if(!Pattern.matches("[0-9]", request.getParameter("pQuantity")))
+					{
+						session.setAttribute("message4", "Please enter the Numbers only!!");
+					}else {
+						pDiscount = Integer.parseInt(request.getParameter("pDiscount"));
+					}
+					 	
+				}else if(pDiscount == 0){
 					
-					
-					 pDiscount = Integer.parseInt(request.getParameter("pDiscount"));
+					session.setAttribute("message4", "Please enter the Discount!!");
+				//	response.sendRedirect("admin.jsp");
+				}else
+				{
+					session.setAttribute("message4","Please enter the Discount!!");
 				}
+				
+				
+				
 				if(!request.getParameter("pQuantity").equals(""))
 				{
 					if(!Pattern.matches("[0-9]", request.getParameter("pQuantity")))
@@ -120,9 +149,19 @@ public class ProductOperationServlet extends HttpServlet {
 						
 						session.setAttribute("message5", "Please enter Numbers only!!");
 					}else {
-					pQuantity = Integer.parseInt(request.getParameter("pQuantity"));
+
+						pQuantity = Integer.parseInt(request.getParameter("pQuantity"));
 					}
+				}else if(pQuantity == 0) 
+				{	
+					session.setAttribute("message5", "Please enter the Quantity!!");
+			//		response.sendRedirect("admin.jsp");
+				}else {
+					session.setAttribute("message5", "Please enter the Quantity!!");
 				}
+				
+				
+				
 				if(!request.getParameter("catId").equals("")) {
 					 catId = Integer.parseInt(request.getParameter("catId"));	
 				}
@@ -137,19 +176,7 @@ public class ProductOperationServlet extends HttpServlet {
 					
 					session.setAttribute("message2", "Please enter the Description!!");
 				//	response.sendRedirect("admin.jsp");
-				} if(pPrice==0){
-					
-					session.setAttribute("message3", "Please enter the Price!!");
-				//	response.sendRedirect("admin.jsp");
-				} if(pDiscount == 0){
-					
-					session.setAttribute("message4", "Please enter the Discount!!");
-				//	response.sendRedirect("admin.jsp");
-				} if(pQuantity == 0){
-					
-					session.setAttribute("message5", "Please enter the Quantiy!!");
-			//		response.sendRedirect("admin.jsp");
-				}
+				} 
 				if(session.getAttribute("message1")!=null ||session.getAttribute("message2")!=null ||session.getAttribute("message3")!=null ||session.getAttribute("message4")!=null||session.getAttribute("message5")!=null) {
 					response.sendRedirect("admin.jsp");
 				}

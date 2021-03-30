@@ -219,7 +219,7 @@ if (user == null) {
 						 	
 						<div class="form-group">
 							<input type="number" class="form-control"
-								placeholder="Enter product Discount" name="pDiscount" required>
+								placeholder="Enter product Discount" name="pDiscount" >
 									<%@include file="components/message_pDiscount.jsp"%>
 						</div>
 						<div class="form-group">
@@ -228,9 +228,9 @@ if (user == null) {
 								<%@include file="components/message_pPrice.jsp"%>
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control"
+							<input type="text" class="form-control"
 								placeholder="Enter product Quantity" name="pQuantity">
-								<%@include file="components/message_Quantity.jsp"%>
+							   <%@include file="components/message_Quantity.jsp"%>  		
 						</div>
 						
 						<div class="form-group">

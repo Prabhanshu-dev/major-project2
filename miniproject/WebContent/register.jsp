@@ -43,8 +43,7 @@
 								<label for="name">User Name</label> <input name="user_name"
 									type="text" class="form-control" id="name"
 									pattern="[A-Za-z]{3,30}" placeholder=" Enterhere"
-									aria-describedby="emailHelp" placeholder="Enter email"
-									required=required>
+									aria-describedby="emailHelp" placeholder="Enter email">
 							<%@include file="components/message_userName.jsp"%>		
 							</div>
 							<div class="form-group">
@@ -59,7 +58,7 @@
 									type="email" class="form-control" id="email"
 									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 									placeholder="Enter here" aria-describedby="emailHelp"
-									placeholder="Enter email" required>
+									placeholder="Enter email">
 							<%@include file="components/message_useremail.jsp"%>		
 							</div>
 							<div class="form-group">
@@ -67,7 +66,7 @@
 									name="user_password" type="password" class="form-control"
 									id="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$" 
 									placeholder="Enter here" aria-describedby="emailHelp"
-									placeholder="Enter email" required>
+									placeholder="Enter email" >
 							<%@include file="components/message_userPassword.jsp"%>		
 							</div>
 							<div class="form-group">
@@ -80,8 +79,7 @@
 							<div class="form-group">
 								<label for="Address">User Address</label>
 								<textarea name="user_address" style="height: 200px"
-									class="form-control" placeholder="Enter your Address"
-									required=required></textarea>
+									class="form-control" placeholder="Enter your Address"></textarea>
 								<%@include file="components/message_userAddress.jsp"%>	
 							</div>
 							<div class="container text-center">
